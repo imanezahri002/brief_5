@@ -88,18 +88,18 @@ function reserver(){
                     <div>
                         <h4>Adult (Prix 500DH)</h4>
                         <div style="display: flex; align-items: center; gap: 10px;">
-                            <button onclick="augmenter()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">+</button>
+                            <button onclick="pre_augmenter()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">+</button>
                             <span id="nbr1">1</span>
-                            <button onclick="diminuer()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                            <button onclick="pre_diminuer()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
                         </div>
                     </div>
                     <div style="width: 5px; background-color: #2e6c8e;"></div>
                     <div>
                         <h4>Enfant (Prix 100DH)</h4>
                         <div style="display: flex; align-items: center; gap: 10px;">
-                            <button onclick="augmenter()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">+</button>
+                            <button onclick="deu_augmenter()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">+</button>
                             <span id="nbr2">1</span>
-                            <button onclick="diminuer()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
+                            <button onclick="deu_diminuer()" style="border-radius: 50%; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
                         </div>
                     </div>
                 </div>
@@ -114,32 +114,47 @@ function reserver(){
                     <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
                     <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
                 </div>
-                <h4>Prix Total : 0000DH</h4>
+                <h4 id="total">Prix Total : 0000DH</h4>
             </div>`
 }
-  function augmenter(){
+  function pre_augmenter(){
     let number=document.getElementById("nbr1");
     let nombre=Number(number.textContent);
     nombre++;
     number.innerHTML=nombre;
+    calculer();
+  }
+  function deu_augmenter(){
     let number_2=document.getElementById("nbr2");
     let nombre_2=Number(number_2.textContent);
     nombre_2++;
     number_2.innerHTML=nombre_2;
+    calculer();
   }
-  function diminuer(){
+  function pre_diminuer(){
     let number=document.getElementById("nbr1");
     let nombre=Number(number.textContent);
     nombre--;
     if(nombre<0){
       number.innerHTML=0;
     }else number.innerHTML=nombre;
-
+    calculer();
+  }
+  function deu_diminuer(){
     let number_2=document.getElementById("nbr2");
     let nombre_2=Number(number_2.textContent);
     nombre_2--;
     if(nombre_2<0){
       number_2.innerHTML=0;
     }else number_2.innerHTML=nombre_2;
+    calculer();
   }
+  
+  function calculer(){
+  let adult=document.getElementById("nbr1").textContent;
+  let enfant=document.getElementById("nbr2").textContent;
+  const Total_affiche=document.getElementById("total");
+  let total=(Number(adult)*500)+(Number(enfant)*100);
+  Total_affiche.innerHTML=total;
+}
 
