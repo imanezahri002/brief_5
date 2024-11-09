@@ -114,7 +114,7 @@ function reserver(){
                     <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
                     <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
                 </div>
-                <h4 id="total">Prix Total : 0000DH</h4>
+                <h4 id="total"></h4>
             </div>`
 }
   function pre_augmenter(){
@@ -155,6 +155,7 @@ function reserver(){
   let enfant=document.getElementById("nbr2").textContent;
   const Total_affiche=document.getElementById("total");
   let total=(Number(adult)*500)+(Number(enfant)*100);
-  Total_affiche.innerHTML=total;
+  Total_affiche.innerHTML="Total: "+total+"Dh";
 }
+
 
