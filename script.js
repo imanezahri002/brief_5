@@ -115,6 +115,7 @@ function reserver(){
                     <button style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;">-</button>
                 </div>
                 <h4 id="total"></h4>
+                <button class="btns" onclick="pr_ticket()">Ticket</button>
             </div>`
 }
   function pre_augmenter(){
@@ -157,5 +158,14 @@ function reserver(){
   let total=(Number(adult)*500)+(Number(enfant)*100);
   Total_affiche.innerHTML="Total: "+total+"Dh";
 }
-
+function pr_ticket(){
+  const troi_section=document.getElementById("section5");
+  troi_section.style.display="none";
+  dic_prt.innerHTML=`<div class='tab tab-4' id="section6">
+              <h1>Les tickets</h1>
+              
+              <div style="height: 500px;display: flex; justify-content: center; align-items: center;">
+              </div>
+              </div>`
+}
 
