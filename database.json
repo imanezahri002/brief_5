@@ -1,0 +1,42 @@
+[
+    {
+        "gare_depart": "Dakhla",
+        "gare_arrivee": "Marrakech",
+        "date_depart": "2024-11-20",
+        "heure_depart": "09:00",
+        "date_arrivee": "2024-11-08",
+        "heure_arrivee": "11:30"
+    },
+    {
+        "gare_depart": "Dakhla",
+        "gare_arrivee": "Marrakech",
+        "date_depart": "2024-11-20",
+        "heure_depart": "10:15",
+        "date_arrivee": "2024-11-09",
+        "heure_arrivee": "12:45"
+    },
+    {
+        "gare_depart": "Gare Saint-Lazare",
+        "gare_arrivee": "Gare de Lyon",
+        "date_depart": "2024-11-22",
+        "heure_depart": "14:00",
+        "date_arrivee": "2024-11-10",
+        "heure_arrivee": "16:30"
+    },
+    {
+        "gare_depart": "Gare du Nord",
+        "gare_arrivee": "Gare Montparnasse",
+        "date_depart": "2024-11-23",
+        "heure_depart": "08:30",
+        "date_arrivee": "2024-11-11",
+        "heure_arrivee": "10:00"
+    },
+    {
+        "gare_depart": "Gare de l'Est",
+        "gare_arrivee": "Gare Saint-Lazare",
+        "date_depart": "2024-11-24",
+        "heure_depart": "13:45",
+        "date_arrivee": "2024-11-12",
+        "heure_arrivee": "15:15"
+    }
+]
