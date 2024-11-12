@@ -1,5 +1,6 @@
 [
     {
+        "id":1,
         "gare_depart": "Dakhla",
         "gare_arrivee": "Marrakech",
         "date_depart": "2024-11-20",
@@ -8,6 +9,7 @@
         "heure_arrivee": "11:30"
     },
     {
+        "id":2,
         "gare_depart": "Dakhla",
         "gare_arrivee": "Marrakech",
         "date_depart": "2024-11-20",
@@ -16,27 +18,30 @@
         "heure_arrivee": "12:45"
     },
     {
-        "gare_depart": "Gare Saint-Lazare",
-        "gare_arrivee": "Gare de Lyon",
+        "id":3,
+        "gare_depart": "Nador",
+        "gare_arrivee": "Fes",
         "date_depart": "2024-11-22",
         "heure_depart": "14:00",
         "date_arrivee": "2024-11-10",
         "heure_arrivee": "16:30"
     },
     {
-        "gare_depart": "Gare du Nord",
-        "gare_arrivee": "Gare Montparnasse",
-        "date_depart": "2024-11-23",
+        "id":4,
+        "gare_depart": "Nador",
+        "gare_arrivee": "Fes",
+        "date_depart": "2024-11-22",
         "heure_depart": "08:30",
-        "date_arrivee": "2024-11-11",
+        "date_arrivee": "2024-11-23",
         "heure_arrivee": "10:00"
     },
     {
-        "gare_depart": "Gare de l'Est",
-        "gare_arrivee": "Gare Saint-Lazare",
-        "date_depart": "2024-11-24",
+        "id":5,
+        "gare_depart": "Nador",
+        "gare_arrivee": "Fes",
+        "date_depart": "2024-11-22",
         "heure_depart": "13:45",
-        "date_arrivee": "2024-11-12",
+        "date_arrivee": "2024-11-23",
         "heure_arrivee": "15:15"
     }
 ]

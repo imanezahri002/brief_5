@@ -264,52 +264,65 @@ body .progress_inner input[type=radio] {
 .progress .progress_inner .progress_inner__tabs .tab .btns:hover{
   background-color: #2e6c8e;
 }
-/*ticket*/
-
-.card {
-    width: 35%;
-    height: 75%;
-    border-radius: 1em 1em 0 0;
-    position: relative;
+/*TICKET*/
+.pare_global{
+  border: 1px solid black;
 }
 
-.view{
-    text-align: center;
+.global .nav{
+  background-color: aqua;
+  display: flex;
+  justify-content:space-between;
+  height: 70px;
+  align-items: center;
+}
+.logo{
+  padding-left: 20px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+}
+.logo .lg{
+  width: 40px;
+  height: 40px;
+}
+.serie{
+  padding-right: 20px;
+}
+.contenu{
+  height: 15rem;
+  display: grid;
+  grid-template-columns:2fr 1fr 2fr;
+  background: rgba(255, 255, 255, 0.7) url("./imgs/back.jpg");
+  background-blend-mode: overlay;
+  align-items: center;
+}
+.contenu .group1{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contenu .centre_image{
+  
+  width: 161px;
+  padding-top: 5rem;
+
+}
+.contenu .group2{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer{
+  display:flex;
+  justify-content: space-between;
+  padding: 5px 20px;
+  
+  align-items: center;
+  background-color: aqua;
 }
 
-.view img {
-    width: 90%;
-    height: 70%;
-    object-fit: cover;
-    border-radius: 1em;
-}
-
-.content {
-    width: 40%;
-    background-image: url(card-backgroud.svg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    padding: 1em;
-}
 
 
-.user-info {
-    padding-bottom: 60px;
-}
-
-.qr-code {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1em;
-}
-
-.qr-code img {
-    width: 55%;
-}
