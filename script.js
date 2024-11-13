@@ -41,6 +41,7 @@ function commencer(){
               <button id="btn1" onclick="chercher()" class="bouton">Chercher</button>
             </div>
             `;
+            
 }
 let tab_data=[];
 async function getdata(){
@@ -60,7 +61,10 @@ function chercher(){
     input_1=document.getElementById("depart").value;
     input_2=document.getElementById("arrivee").value;
     input_3=document.getElementById("date").value;
-
+    if (input_1 === "" || input_2 === "" || input_3 === ""){
+      alert("il remplir les champs premierement");
+    }
+    else{
   const deu_section=document.getElementById("section2");
   deu_section.style.display="none";
   dic_prt.innerHTML=` <div class='tab tab-2' id="section3">
@@ -78,10 +82,12 @@ function chercher(){
                     <img width="70px" src="./imgs/vol-direct.png" alt="">
                     <span>${newarray[i].heure_arrivee}</span>
                     <button onclick="reserver()" class="btns">reserver</button>
-
                 </div>`
 }
+troi_section.innerHTML+=`<button type="button" id="btn_retour" class="bouton" onclick="seretourner()">retour</button>`
+};
 }
+
 
 function reserver(){
   const troi_section=document.getElementById("section3");
@@ -117,10 +123,11 @@ function reserver(){
             </div>`
             const checkbox=document.getElementById("check_button");
             for(let i=0;i<15;i++){
-              checkbox.innerHTML+=`<button verification="false" class="places" onclick="check(${i})" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;"></button>
-                                  `
+              checkbox.innerHTML+=`<button verification="false" class="places" onclick="check(${i})" style="border-radius: 5px; width: 50px; height: 50px; font-size: 15pt; color: #2e6c8e; background-color: #a6cde2; border: 3px solid #2e6c8e;"></button>                    
+              `
             }
-
+            const div_section=document.getElementById("section5");
+            div_section.innerHTML+=`  <button type="button" id="btn_retour" class="bouton" onclick="seretourner()">retour</button>`
 }
   function pre_augmenter(){
     let number=document.getElementById("nbr1");
@@ -191,7 +198,7 @@ function check(i){
     if(cpt == total){
       prevuous1.style.display = "none";
       next1.style.display = "none";
-      div_check.innerHTML +=`<button class="btns" onclick="pr_ticket()">Ticket</button>`;
+      div_check.innerHTML +=`<button class="bouton" onclick="pr_ticket()">Ticket</button>`;
 
     }
   }
@@ -214,7 +221,7 @@ function pr_ticket(){
   for(let i=0;i<nombre_adulte;i++){
     quatr_section.innerHTML+=`
               <div style="height: 500px;display: flex; justify-content: center; align-items: center;">
-              <div class="global">
+              <div class="global" id="ticket_imp">
             <div class="nav">
                 <div class="logo"><img src="./imgs/flight.png" alt="" class="lg">
                 <h2>Imane-air</h2></div>
@@ -239,6 +246,7 @@ function pr_ticket(){
             <div class="date">${input_3}</div>
             <div><img src="./imgs/qr.png" alt=""></div>
             </div>
+            <div class="ligne">--------------------------------------------------------------------------------------------</div>
         </div>
 
               </div>
@@ -261,19 +269,20 @@ function pr_ticket(){
                 <div class="group1">
                     <div>gare de depart:</div>
                     <h1>${input_1}</h1>
-                    <h4>09:00</h4>
+                    <h3>09:00</h3>
                 </div>
                     <img src="./imgs/avvvvvvion.png" alt="" class="centre_image">
                 <div class="group2">
                     <div>gare d'arrivee:</div>
                     <h1>${input_2}</h1>
-                    <h4>11:30</h4>
+                    <h3>11:30</h3>
                 </div>
             </div>
             <div class="footer">
             <div class="date">${input_3}</div>
             <div><img src="./imgs/qr.png" alt=""></div>
             </div>
+            <div class="ligne">--------------------------------------------------------------------------------------------</div>
         </div>
 
               </div>
@@ -282,5 +291,23 @@ function pr_ticket(){
               console.log(id);
             }
               
+            quatr_section.innerHTML+=`<button type="button" id="btn_retour" class="bouton" onclick="seretourner()">retour</button>
+            <button type="button" onclick="imprimer()" id="btn" class="bouton">imprimer</button>`
+}
+function imprimer(){
+          const div_ticket=document.getElementById("section6");
+          const bouton=document.getElementById("btn");
+          bouton.style.display="none";
+          const options = {
+            margin: 10,
+            filename: 'Ticket.pdf',
+            image: { type: 'jpeg', quality: 1 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+          };
+          html2pdf().set(options).from(div_ticket).save().then(()=>
+            bouton.style.display="flex"
+          );
+
 }
 
